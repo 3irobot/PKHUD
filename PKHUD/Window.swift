@@ -77,7 +77,8 @@ internal class ContainerView: UIView {
 
     fileprivate let backgroundView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(white:0.0, alpha:0.1)
+        //view.backgroundColor = UIColor(white:0.0, alpha:0.1)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.25)
         view.alpha = 0.0
         return view
     }()
