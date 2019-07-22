@@ -69,36 +69,95 @@ public final class HUD {
         HUD.show(content, onView: view)
         HUD.hide(afterDelay: delay, completion: completion)
     }
+    
+    public static var font : UIFont = UIFont.boldSystemFont(ofSize: 14.0)
+    public static var textColor : UIColor = UIColor.black
 
     // MARK: Private methods
     fileprivate static func contentView(_ content: HUDContentType) -> UIView {
         switch content {
         case .success:
-            return PKHUDSuccessView()
+            let view = PKHUDSuccessView()
+            view.titleLabel.font = self.font
+            view.subtitleLabel.font = self.font
+            view.titleLabel.textColor = self.textColor
+            view.subtitleLabel.textColor = self.textColor
+            return view
         case .error:
-            return PKHUDErrorView()
+            let view = PKHUDErrorView()
+            view.titleLabel.font = self.font
+            view.subtitleLabel.font = self.font
+            view.titleLabel.textColor = self.textColor
+            view.subtitleLabel.textColor = self.textColor
+            return view
         case .progress:
-            return PKHUDProgressView()
+            let view = PKHUDProgressView()
+            view.titleLabel.font = self.font
+            view.subtitleLabel.font = self.font
+            view.titleLabel.textColor = self.textColor
+            view.subtitleLabel.textColor = self.textColor
+            return view
         case let .image(image):
-            return PKHUDSquareBaseView(image: image)
+            let view = PKHUDSquareBaseView(image: image)
+            view.titleLabel.font = self.font
+            view.subtitleLabel.font = self.font
+            view.titleLabel.textColor = self.textColor
+            view.subtitleLabel.textColor = self.textColor
+            return view
         case let .rotatingImage(image):
-            return PKHUDRotatingImageView(image: image)
-
+            let view =  PKHUDRotatingImageView(image: image)
+            view.titleLabel.font = self.font
+            view.subtitleLabel.font = self.font
+            view.titleLabel.textColor = self.textColor
+            view.subtitleLabel.textColor = self.textColor
+            return view
         case let .labeledSuccess(title, subtitle):
-            return PKHUDSuccessView(title: title, subtitle: subtitle)
+            let view =  PKHUDSuccessView(title: title, subtitle: subtitle)
+            view.titleLabel.font = self.font
+            view.subtitleLabel.font = self.font
+            view.titleLabel.textColor = self.textColor
+            view.subtitleLabel.textColor = self.textColor
+            return view
         case let .labeledError(title, subtitle):
-            return PKHUDErrorView(title: title, subtitle: subtitle)
+            let view =  PKHUDErrorView(title: title, subtitle: subtitle)
+            view.titleLabel.font = self.font
+            view.subtitleLabel.font = self.font
+            view.titleLabel.textColor = self.textColor
+            view.subtitleLabel.textColor = self.textColor
+            return view
         case let .labeledProgress(title, subtitle):
-            return PKHUDProgressView(title: title, subtitle: subtitle)
+            let view =  PKHUDProgressView(title: title, subtitle: subtitle)
+            view.titleLabel.font = self.font
+            view.subtitleLabel.font = self.font
+            view.titleLabel.textColor = self.textColor
+            view.subtitleLabel.textColor = self.textColor
+            return view
         case let .labeledImage(image, title, subtitle):
-            return PKHUDSquareBaseView(image: image, title: title, subtitle: subtitle)
+            let view =  PKHUDSquareBaseView(image: image, title: title, subtitle: subtitle)
+            view.titleLabel.font = self.font
+            view.subtitleLabel.font = self.font
+            view.titleLabel.textColor = self.textColor
+            view.subtitleLabel.textColor = self.textColor
+            return view
         case let .labeledRotatingImage(image, title, subtitle):
-            return PKHUDRotatingImageView(image: image, title: title, subtitle: subtitle)
-
+            let view =  PKHUDRotatingImageView(image: image, title: title, subtitle: subtitle)
+            view.titleLabel.font = self.font
+            view.subtitleLabel.font = self.font
+            view.titleLabel.textColor = self.textColor
+            view.subtitleLabel.textColor = self.textColor
+            return view
         case let .label(text):
-            return PKHUDTextView(text: text)
+            let view =  PKHUDTextView(text: text)
+            view.titleLabel.font = self.font
+            view.titleLabel.textColor = self.textColor
+            return view
         case .systemActivity:
-            return PKHUDSystemActivityIndicatorView()
+            let view =  PKHUDSystemActivityIndicatorView()
+            view.titleLabel.font = self.font
+            view.subtitleLabel.font = self.font
+            view.titleLabel.textColor = self.textColor
+            view.subtitleLabel.textColor = self.textColor
+            return view
         }
     }
 }
